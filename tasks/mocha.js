@@ -245,7 +245,7 @@ module.exports = function(grunt) {
           tempfile.path,
           // The Mocha helper file to be injected.
           // task.getFile('../test/run-mocha.js'),
-          task.getFile('mocha/mocha-helper.js'),
+          task.getFile('mocha/istanbul-mocha-helper.js'),
           // URL to the Mocha .html test file to run.
           url,
           // Additional configuration
