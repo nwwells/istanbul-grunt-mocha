@@ -151,7 +151,7 @@ module.exports = function(grunt) {
   // TASKS
   // ==========================================================================
 
-  grunt.registerMultiTask('mocha', 'Run Mocha unit tests in a headless PhantomJS instance.', function() {
+  grunt.registerMultiTask('istanbul-mocha', 'Run Mocha unit tests in a headless PhantomJS instance.', function() {
     // Get files as URLs.
     var urls = file.expandFileURLs(this.file.src);
     // Get additional configuration
