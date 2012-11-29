@@ -1,24 +1,24 @@
 {
-  "name": "grunt-mocha",
-  "description": "Grunt task for running Mocha specs",
-  "version": "0.1.7",
-  "homepage": "https://github.com/kmiyashiro/grunt-mocha",
+  "name": "istanbul-grunt-mocha",
+  "description": "Grunt task for running Mocha specs, writing istanbul code coverage to a coverage folder",
+  "version": "0.1.0",
+  "homepage": "https://github.com/nwwells/istanbul-grunt-mocha",
   "author": {
-    "name": "Kelly Miyashiro",
-    "email": "miyashiro.kelly@gmail.com",
-    "url": "http://non-diligent.com"
+    "name": "Nathan Wells",
+    "email": "nwwells@gmail.com",
+    "url": "http://nathanwells.net"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kmiyashiro/grunt-mocha.git"
+    "url": "git://github.com/nwwells/istanbul-grunt-mocha.git"
   },
   "bugs": {
-    "url": "https://github.com/kmiyashiro/grunt-mocha/issues"
+    "url": "https://github.com/nwwells/istanbul-grunt-mocha/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kmiyashiro/grunt-mocha/blob/master/LICENSE-MIT"
+      "url": "https://github.com/nwwells/istanbul-grunt-mocha/blob/master/LICENSE-MIT"
     }
   ],
   "main": "grunt.js",
@@ -35,6 +35,6 @@
     "growl": "~1"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin", "mocha", "istanbul"
   ]
 }
