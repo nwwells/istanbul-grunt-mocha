@@ -59,7 +59,8 @@
           passed    = this.total - this.failures,
           total     = this.total;
 
-        sendMessage('done', failed, passed, total, time);
+        var coverage = window.__coverage__;
+        sendMessage('done', failed, passed, total, time, coverage);
       });
     };
 
