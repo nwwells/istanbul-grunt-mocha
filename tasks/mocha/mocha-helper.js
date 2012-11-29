@@ -10,6 +10,9 @@
 /*global mocha:true, alert:true*/
 
 (function() {
+    require.config({
+      baseUrl: '../../public/javascripts.instrumented'
+    });
     // Send messages to the parent phantom.js process via alert! Good times!!
     function sendMessage() {
       var args = [].slice.call(arguments);
