@@ -24,7 +24,7 @@ module.exports = function(grunt) {
   var option = grunt.option;
   var config = grunt.config;
   var template = grunt.template;
-  
+
   // Nodejs libs.
   var fs = require('fs');
   var path = require('path');
@@ -70,6 +70,17 @@ module.exports = function(grunt) {
     }
   }
 
+  //track series for coverage filename
+  var currentSeries;
+  function writeCoverage(coverage) {
+    if (!coverage) {
+      return;
+    }
+    var outFileName = 'coverage/data/coverage-'+currentSeries+'.json';
+    file.write(outFileName, JSON.stringify(coverage));
+    verbose.write('Wrote coverage report to '+outFileName);
+  }
+
   // Handle methods passed from PhantomJS, including Mocha hooks.
   var phantomHandlers = {
     // Mocha hooks.
@@ -102,7 +113,8 @@ module.exports = function(grunt) {
         verbose.ok().or.write('.');
       }
     },
-    done: function(failed, passed, total, duration) {
+    done: function(failed, passed, total, duration, coverage) {
+      writeCoverage(coverage);
       var nDuration = parseFloat(duration) || 0;
       status.failed += failed;
       status.passed += passed;
@@ -158,6 +170,7 @@ module.exports = function(grunt) {
 
     // Reset status.
     status = {failed: 0, passed: 0, total: 0, duration: 0};
+    currentSeries = this.target;
 
     // Process each filepath in-order.
     utils.async.forEachSeries(urls, function(url, next) {
